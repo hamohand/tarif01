@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {NgIf} from "@angular/common";
-import {LicenseService} from "./licence/licence.service";
-import {environment} from "../environments/environment";
 
 // @ts-ignore
 @Component({
@@ -66,24 +64,12 @@ import {environment} from "../environments/environment";
     }
   `]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   //title = 'Chapitres';
   //title = 'Positions-4';
   title = 'Positions-6';
   expired = false;
 
-  constructor(private licenseService: LicenseService) {}
-
-  ngOnInit() {
-    this.licenseService.fetchStatus();
-    this.licenseService.getLicenseStatus().subscribe(status => {
-      if (status?.expired) {
-        this.expired = true;
-      }
-    });
-  }
-
-  //Blocage par route guard (optionnel)
-  //Tu peux aussi utiliser un CanActivate pour bloquer l'accès à toutes les routes si la licence est expirée.
+  constructor() {}
 
 }
