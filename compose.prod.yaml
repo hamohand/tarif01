@@ -78,7 +78,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile.prod # On utilise le Dockerfile de production
-    container_name: ${PROJECT_NAME}-${FRONTEND_SERVICE_NAME}  # à enlever (?!)
+    container_name: ${PROJECT_NAME}-${FRONTEND_SERVICE_NAME}
     restart: unless-stopped
     depends_on:
       - backend
