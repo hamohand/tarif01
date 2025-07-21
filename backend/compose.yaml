@@ -2,7 +2,7 @@ services:
   db:
     image: "postgres:${POSTGRES_IMAGE_TAG:-16}" # Utilise POSTGRES_IMAGE_TAG ou '16' par défaut
     env_file:
-      - .env # <--- LIGNE IMPORTANTE ! variables d'environnement
+      - .env.dev # <--- LIGNE IMPORTANTE ! variables d'environnement
     environment:
       - "POSTGRES_DB=${POSTGRES_DB}"
       - "POSTGRES_PASSWORD=${POSTGRES_PASSWORD}"
@@ -37,7 +37,7 @@ services:
 #      - "SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}"
 #      - "SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}"
     env_file:
-      - .env # <--- LIGNE IMPORTANTE ! variables d'environnement
+      - .env.dev # <--- LIGNE IMPORTANTE ! variables d'environnement
     networks:
       - tarif-network
 
