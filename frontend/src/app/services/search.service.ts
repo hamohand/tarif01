@@ -10,7 +10,6 @@ export class SearchService {
   private apiUrl = '/api/recherche';
 
 constructor(private http: HttpClient) { }
-
   /**
    * Search for chapters based on a search term
    * @param searchTerm The term to search for
